@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@100;400;500&family=Noto+Sans:wght@200;400&family=Open+Sans&family=Raleway:wght@200&family=Red+Hat+Display:wght@500;700;900&family=Roboto:wght@300;400&display=swap');
+body{
+    background-color: rgb(255, 255, 255);
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    background-color: #000;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+
+/* background animation 3d */
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+}
+/* background animation 3d end*/
+
+
+
+
+/* Navbar css start */
+
+.devruz_img img{
+    width: 250px;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    /* background-color: rgba(128, 128, 128, 0); */
+    background-color: rgba(0, 0, 0, 0.911);
+}
+.devzur_header_menu{
+    margin-top: 18px;
+}
+.devzur_header_menu nav{
+    display: flex;
+    color: white;
+    gap: 20px;
+}
+.devzur_header_menu li{
+    list-style: none;
+}
+.devzur_header_menu a{
+    color: white;
+    text-decoration: none;
+}
+.devzur_header_menu a:hover{
+    border-bottom: 2px solid green;
+}
+.devzur_lgs{
+    background-color: green;
+    padding: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 50px;
+    box-shadow: 0 0 12px green;
+}
+.devzur_lgs:hover{
+    background-color:rgb(0, 163, 0);
+}
+
+/* Navbar css end */
+
+
+
+/* landing page css start */
+.devzur_lpage{
+    background-color: rgba(255, 255, 255, 0.445);
+    padding: 30px;
+    padding-bottom: 140px;
+    padding-top: 70px;
+    padding-left: 130px;
+    display: flex;
+    gap: 90px;
+}
+.devzur_lpage__text h1{
+    font-size: 60px;
+}
+span{
+    color: rgb(0, 185, 0);
+    font-weight: bold;
+}
+.devzur_lpage__text a{
+    color: white;
+    text-decoration: none;
+    background-color: rgb(0, 224, 0);
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 4px 2px -2px rgb(0, 0, 0);
+    font-weight: bold;
+    box-shadow: 0 0 12px green;
+    font-size: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.devzur_lpage__text a:hover{
+    background-color: green;
+    box-shadow: 0 0 0px;
+}
+
+.devzur_lpage__banner img{
+    width:500px;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+
+/* landing page css end */
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devzur</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="devruz_img">
+            <img src="Black logo - no background (1).png" alt="logo">
+        </div>
+        <div class="devzur_header_menu">
+            <nav>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a class="devzur_lgs" href="#">Login</a></li>
+            </nav>
+        </div>
+    </header>
+    <div class="devzur_lpage">
+        <div class="devzur_lpage__text">
+            <h1>Let's make your <span>Brand</span> <br>
+                and team a success</h1>
+            <p>"Elevate Your Business: Software Solutions and Marketing Mastery"</p>
+            <br><br>
+            <a href="#">Try Demo</a>
+        </div>
+        <div class="devzur_lpage__banner">
+            <img src="banner1.png" alt="">
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <canvas id="bgCanvas"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script>
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        var renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("bgCanvas"), alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        // Create hexagon geometry
+        var hexGeometry = new THREE.CylinderGeometry(1, 1, 0.2, 6);
+        var material1 = new THREE.MeshBasicMaterial({ color: 0x009900 }); // Dim green
+        var material2 = new THREE.MeshBasicMaterial({ color: 0x009900 }); // Black
+
+        // Create multiple hexagons and position them randomly
+        for (let i = 0; i < 20; i++) {
+            var hex1 = new THREE.Mesh(hexGeometry, material1);
+            var hex2 = new THREE.Mesh(hexGeometry, material2);
+            hex1.position.set(Math.random() * 20 - 10, Math.random() * 20 - 10, -i * 5);
+            hex2.position.set(Math.random() * 20 - 10, Math.random() * 20 - 10, -i * 5);
+            scene.add(hex1);
+            scene.add(hex2);
+        }
+
+        camera.position.z = 5;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            scene.children.forEach(hex => {
+                hex.position.z += 0.05; // Move hexagons forward
+                if (hex.position.z > 10) hex.position.z = -50; // Reset hexagon's position if it goes beyond the view
+            });
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>
